@@ -66,4 +66,89 @@ public class array_1 {
 		return rev;
 	}
 
+	public int[] maxEnd3(int[] nums) {
+
+		// set all the other elements to be largest number
+		/*
+		 * int max = nums[0]; for (int comp = 1; comp < nums.length; comp++) { if (max <
+		 * nums[comp]) { max = nums[comp]; }
+		 * 
+		 * }
+		 */
+
+		int max = nums[0] > nums[2] ? nums[0] : nums[2];
+
+		int maxArr[] = new int[3];
+		for (int a = 0; a < maxArr.length; a++) {
+			maxArr[a] = max;
+		}
+
+		return maxArr;
+	}
+
+	public int sum2(int[] nums) {
+		int res = 0;
+
+		if (nums.length >= 2) {
+			res = nums[0] + nums[1];
+		} else if (nums.length == 1) {
+			res = nums[0];
+		} else {
+			res = 0;
+		}
+
+		return res;
+	}
+
+	public int[] middleWay(int[] a, int[] b) {
+		int[] mid = new int[2];
+
+		mid[0] = a[1];
+		mid[1] = b[1];
+
+		return mid;
+	}
+
+	public int[] makeEnds(int[] nums) {
+		int[] ends = new int[2];
+
+		ends[0] = nums[0];
+		ends[1] = nums[nums.length - 1];
+
+		return ends;
+	}
+
+	public boolean has23(int[] nums) {
+		boolean res = false;
+
+		if (nums[0] == 2 || nums[0] == 3) {
+			res = true;
+		} else if (nums[1] == 2 || nums[1] == 3)
+			res = true;
+
+		return res;
+	}
+
+	public boolean no23(int[] nums) {
+		boolean res = true;
+
+		if (nums[0] == 2 || nums[0] == 3) {
+			res = false;
+		}
+
+		if (nums[1] == 2 || nums[1] == 3) {
+			res = false;
+		}
+
+		return res;
+	}
+
+	public int[] makeLast(int[] nums) {
+		int[] last = new int[nums.length * 2];
+
+		last[last.length - 1] = nums[nums.length - 1];
+
+		return last;
+	}
+
 }
