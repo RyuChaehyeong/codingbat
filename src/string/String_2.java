@@ -95,4 +95,27 @@ public class String_2 {
 		return false;
 	}
 
+	public boolean xyBalance(String str) {
+		int lastX = str.lastIndexOf('x');
+		int lastY = str.lastIndexOf('y');
+
+		return lastX <= lastY;
+
+	}
+
+	public String mixString(String a, String b) {
+		int min = Math.min(a.length(), b.length());
+		int x = 0;
+		String mix = "";
+
+		while (x < min) {
+			String asub = a.substring(x, x + 1);
+			String bsub = b.substring(x, x + 1);
+			mix = mix + asub + bsub;
+			x++;
+		}
+
+		return mix + a.substring(x) + b.substring(x);
+	}
+
 }
